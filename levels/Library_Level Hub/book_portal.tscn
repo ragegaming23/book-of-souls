@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://h6gbl1r4gie"]
+
+[ext_resource type="Script" uid="uid://b1k3f4hoxd723" path="res://BookPortal.gd" id="1_6df26"]
+[ext_resource type="Texture2D" uid="uid://j0aeo24toag6" path="res://icon.svg" id="2_2n1yp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t08ev"]
+
+[node name="BookPortal" type="Area2D"]
+script = ExtResource("1_6df26")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(8, 0)
+texture = ExtResource("2_2n1yp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t08ev")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

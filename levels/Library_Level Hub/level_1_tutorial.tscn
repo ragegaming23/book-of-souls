@@ -1,0 +1,122 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnuc240r7s8sk"]
+
+[ext_resource type="PackedScene" uid="uid://bghlv24k1sx8m" path="res://Player/character_body_2d.tscn" id="1_piyb2"]
+[ext_resource type="PackedScene" uid="uid://r857h8bf53qw" path="res://levels/Library_Level Hub/Floor.tscn" id="2_b5fwq"]
+
+[node name="Game Hub" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_piyb2")]
+position = Vector2(-1, -85)
+
+[node name="Floor" parent="." instance=ExtResource("2_b5fwq")]
+
+[node name="Floor2" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(337, 0)
+
+[node name="Floor3" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(676, 0)
+
+[node name="Floor4" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1016, 0)
+
+[node name="Floor5" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1352, 0)
+
+[node name="wall" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(-192, -144)
+rotation = 1.5707964
+
+[node name="wall2" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(-192, -480)
+rotation = 1.5707964
+
+[node name="wall3" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1536, -149)
+rotation = 1.5707964
+
+[node name="wall4" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1536, -488)
+rotation = 1.5707964
+
+[node name="wall5" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(-192, -816)
+rotation = 1.5707964
+
+[node name="wall6" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1536, -824)
+rotation = 1.5707964
+
+[node name="cieling" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(-8, -960)
+
+[node name="cieling2" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(328, -960)
+
+[node name="cieling3" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1352, -976)
+
+[node name="cieling4" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1016, -976)
+
+[node name="Floor7" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(0, -1008)
+
+[node name="Floor8" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(337, -1008)
+
+[node name="Floor10" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1016, -1008)
+
+[node name="Floor11" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1352, -1008)
+
+[node name="wall7" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(-192, -1152)
+rotation = 1.5707964
+
+[node name="wall8" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(-192, -1488)
+rotation = 1.5707964
+
+[node name="wall9" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1536, -1157)
+rotation = 1.5707964
+
+[node name="wall10" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1536, -1496)
+rotation = 1.5707964
+
+[node name="wall11" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(-192, -1824)
+rotation = 1.5707964
+
+[node name="wall12" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1536, -1832)
+rotation = 1.5707964
+
+[node name="cieling5" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(-8, -1968)
+
+[node name="cieling6" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(328, -1968)
+
+[node name="cieling7" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1352, -1984)
+
+[node name="cieling8" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1016, -1984)
+
+[node name="StaticBody2D19" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(0, 40)
+
+[node name="StaticBody2D20" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(336, 48)
+
+[node name="StaticBody2D21" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(680, 48)
+
+[node name="StaticBody2D22" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1016, 48)
+
+[node name="StaticBody2D23" parent="." instance=ExtResource("2_b5fwq")]
+position = Vector2(1360, 40)
