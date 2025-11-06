@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
-
+@onready var main = get_tree().get_root().get_node(".")
+@onready var projectile = load("res://Player/projectile.tscn")
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
 @export var jump_amount = 1
+var flipped = true
 
 
 func _physics_process(delta: float) -> void:
@@ -12,7 +14,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	if Input.is_action_just_pressed("shoot"):
-		pass
+		shoot()
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -25,5 +27,19 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	if Input.is_action_pressed("move_left") and flipped:
+		scale.x = -1 
+		flipped = false
+	if Input.is_action_pressed("move_right") and not flipped:
+		scale.x = -1 
+		flipped = true
 	move_and_slide()
+
+func shoot():
+	var instance = projectile.instantiate()
+	instance.direction = rotation
+	instance.global_position = $BulletSpawn.global_position
+	instance.SpawnRot = rotation
+	instance.Zdex = z_index -1
+	main.add_child.call_deferred(instance)
+	

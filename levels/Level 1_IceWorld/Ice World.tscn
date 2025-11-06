@@ -1,8 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://wnbjjyyqugk0"]
+[gd_scene load_steps=3 format=3 uid="uid://wnbjjyyqugk0"]
 
 [ext_resource type="PackedScene" uid="uid://r857h8bf53qw" path="res://levels/Library_Level Hub/Floor.tscn" id="1_qy1p3"]
+[ext_resource type="PackedScene" uid="uid://bghlv24k1sx8m" path="res://Player/character_body_2d.tscn" id="2_77y3e"]
 
 [node name="IceWorld" type="Node2D"]
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_qy1p3")]
 position = Vector2(168, 24)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_77y3e")]
+position = Vector2(88, -96)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("1_qy1p3")]
+position = Vector2(504, 24)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("1_qy1p3")]
+position = Vector2(960, 24)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("1_qy1p3")]
+position = Vector2(1288, 24)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("1_qy1p3")]
+position = Vector2(1616, 24)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("1_qy1p3")]
+position = Vector2(1952, 24)

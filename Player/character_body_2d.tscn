@@ -1,18 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://bghlv24k1sx8m"]
+[gd_scene load_steps=5 format=3 uid="uid://bghlv24k1sx8m"]
 
 [ext_resource type="Script" uid="uid://n05yngf1es1x" path="res://Player/Player.gd" id="1_bcc58"]
 [ext_resource type="Texture2D" uid="uid://j0aeo24toag6" path="res://icon.svg" id="1_uvl67"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bcc58"]
-radius = 62.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vvw5e"]
+radius = 24.0
+height = 128.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vvw5e"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_bcc58")
 
 [node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.375, 1)
 texture = ExtResource("1_uvl67")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_bcc58")
+shape = SubResource("CapsuleShape2D_vvw5e")
+
+[node name="BulletSpawn" type="CollisionShape2D" parent="."]
+position = Vector2(128, 0)
+shape = SubResource("CircleShape2D_vvw5e")
+disabled = true

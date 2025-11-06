@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://7ilfleeblfqv"]
+
+[ext_resource type="Script" uid="uid://crnq8mda8ruqg" path="res://projectile.gd" id="1_7k6uo"]
+[ext_resource type="Texture2D" uid="uid://j0aeo24toag6" path="res://icon.svg" id="2_epe61"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dbf7h"]
+height = 160.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7k6uo"]
+height = 160.0
+
+[node name="Projectile" type="CharacterBody2D"]
+script = ExtResource("1_7k6uo")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(1.09375, 0.12499999)
+texture = ExtResource("2_epe61")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_dbf7h")
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_7k6uo")
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
