@@ -1,29 +1,27 @@
 [gd_scene load_steps=5 format=3 uid="uid://7ilfleeblfqv"]
 
 [ext_resource type="Script" uid="uid://crnq8mda8ruqg" path="res://projectile.gd" id="1_7k6uo"]
-[ext_resource type="Texture2D" uid="uid://j0aeo24toag6" path="res://icon.svg" id="2_epe61"]
+[ext_resource type="Texture2D" uid="uid://blccxsoaw1ind" path="res://Projectile_Prototype.png" id="2_7k6uo"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dbf7h"]
-height = 160.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_epe61"]
+radius = 15.033297
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7k6uo"]
-height = 160.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_dbf7h"]
+radius = 15.033297
 
 [node name="Projectile" type="CharacterBody2D"]
 script = ExtResource("1_7k6uo")
 
-[node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(1.09375, 0.12499999)
-texture = ExtResource("2_epe61")
+[node name="ProjectilePrototype" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_7k6uo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_dbf7h")
+shape = SubResource("CircleShape2D_epe61")
 
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_7k6uo")
+shape = SubResource("CircleShape2D_dbf7h")
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
