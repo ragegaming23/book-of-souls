@@ -21694,6 +21694,7 @@ texture = ExtResource("5_4jdcb")
 155:155/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_d5q6f"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4jdcb")
 
 [node name="Game Hub" type="Node2D"]
