@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var main = get_tree().get_root().get_node(".")
 @onready var projectile = load("res://Player/projectile.tscn")
 @export var SPEED = 300.0
-@export var JUMP_VELOCITY = -400.0
+@export var JUMP_VELOCITY = -500.0
 @export var jump_amount = 1
 var flipped = true
 
