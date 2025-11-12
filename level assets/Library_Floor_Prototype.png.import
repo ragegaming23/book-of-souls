@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blccxsoaw1ind"
-path="res://.godot/imported/Projectile_Prototype.png-5626ac2ec162f5e1bb30f09ca051f3f4.ctex"
+uid="uid://c4ng42w8qq7ga"
+path="res://.godot/imported/Library_Floor_Prototype.png-2619b354162550d98a4be1e6c6da90d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Projectile_Prototype.png"
-dest_files=["res://.godot/imported/Projectile_Prototype.png-5626ac2ec162f5e1bb30f09ca051f3f4.ctex"]
+source_file="res://level assets/Library_Floor_Prototype.png"
+dest_files=["res://.godot/imported/Library_Floor_Prototype.png-2619b354162550d98a4be1e6c6da90d8.ctex"]
 
 [params]
 

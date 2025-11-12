@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://h6gbl1r4gie"]
 
-[ext_resource type="Script" uid="uid://b1k3f4hoxd723" path="res://BookPortal.gd" id="1_6df26"]
+[ext_resource type="Script" uid="uid://b1k3f4hoxd723" path="res://levels/BookPortal.gd" id="1_6df26"]
 [ext_resource type="Texture2D" uid="uid://j0aeo24toag6" path="res://icon.svg" id="2_2n1yp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t08ev"]
