@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccil8qxr164a7"]
+
+[ext_resource type="Texture2D" uid="uid://nn3bcy4pgjby" path="res://Enemies/EnemyAssets/securitron.png" id="1_71h07"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71h07"]
+radius = 13.0
+height = 46.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0nfwc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1l23"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qfeo7"]
+radius = 17.029387
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_71h07"]
+
+[node name="Securitron01" type="CharacterBody2D"]
+
+[node name="Securitron" type="Sprite2D" parent="."]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_71h07")
+
+[node name="Body" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 30)
+shape = SubResource("CapsuleShape2D_71h07")
+
+[node name="RightArm" type="CollisionShape2D" parent="."]
+position = Vector2(17, 20)
+shape = SubResource("CapsuleShape2D_0nfwc")
+
+[node name="LeftArm" type="CollisionShape2D" parent="."]
+position = Vector2(-37, 20)
+shape = SubResource("CapsuleShape2D_s1l23")
+
+[node name="Head" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -18)
+shape = SubResource("CircleShape2D_qfeo7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 0)
+shape = SubResource("CircleShape2D_71h07")
+disabled = true
+
+[node name="BodyCollision" type="Area2D" parent="." groups=["Enemy"]]
+
+[node name="Body" type="CollisionShape2D" parent="BodyCollision"]
+position = Vector2(-8, 30)
+shape = SubResource("CapsuleShape2D_71h07")
+
+[node name="RightArm" type="CollisionShape2D" parent="BodyCollision"]
+position = Vector2(17, 20)
+shape = SubResource("CapsuleShape2D_0nfwc")
+
+[node name="LeftArm" type="CollisionShape2D" parent="BodyCollision"]
+position = Vector2(-37, 20)
+shape = SubResource("CapsuleShape2D_s1l23")
+
+[node name="Head" type="CollisionShape2D" parent="BodyCollision"]
+position = Vector2(-6, -18)
+shape = SubResource("CircleShape2D_qfeo7")

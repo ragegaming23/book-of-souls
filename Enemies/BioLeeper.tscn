@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://djo58c7liqg4j"]
+
+[ext_resource type="Texture2D" uid="uid://dxk4vdttncyd" path="res://Enemies/EnemyAssets/BioLeeper.png" id="1_pkua3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pkua3"]
+
+[node name="BioLeeper" type="CharacterBody2D"]
+
+[node name="BioLeeper" type="Sprite2D" parent="." groups=["Enemy"]]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_pkua3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pkua3")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.05, 0.05)

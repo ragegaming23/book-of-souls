@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4ng42w8qq7ga"
-path="res://.godot/imported/Library_Floor_Prototype.png-2619b354162550d98a4be1e6c6da90d8.ctex"
+uid="uid://dxk4vdttncyd"
+path="res://.godot/imported/BioLeeper.png-d68ffcde9eccb68c84e5bf39a96fbb43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level assets/Library_Floor_Prototype.png"
-dest_files=["res://.godot/imported/Library_Floor_Prototype.png-2619b354162550d98a4be1e6c6da90d8.ctex"]
+source_file="res://Enemies/EnemyAssets/BioLeeper.png"
+dest_files=["res://.godot/imported/BioLeeper.png-d68ffcde9eccb68c84e5bf39a96fbb43.ctex"]
 
 [params]
 
