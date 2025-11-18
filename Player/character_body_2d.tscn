@@ -17,6 +17,8 @@ height = 96.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_bcc58")
+CanDoubleJump = true
+CanDash = true
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.07321428, 0.081951775)
@@ -62,3 +64,5 @@ metadata/_custom_type_script = "uid://cxtelhsf7er2"
 script = ExtResource("7_c7av4")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://cxtelhsf7er2"
+
+[node name="DashTimer" type="Timer" parent="."]
