@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blccxsoaw1ind"
-path="res://.godot/imported/Projectile_Prototype.png-5626ac2ec162f5e1bb30f09ca051f3f4.ctex"
+uid="uid://dxk4vdttncyd"
+path="res://.godot/imported/BioLeeper.png-d68ffcde9eccb68c84e5bf39a96fbb43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Projectile_Prototype.png"
-dest_files=["res://.godot/imported/Projectile_Prototype.png-5626ac2ec162f5e1bb30f09ca051f3f4.ctex"]
+source_file="res://Enemies/EnemyAssets/BioLeeper.png"
+dest_files=["res://.godot/imported/BioLeeper.png-d68ffcde9eccb68c84e5bf39a96fbb43.ctex"]
 
 [params]
 

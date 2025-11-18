@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bghlv24k1sx8m"]
+[gd_scene load_steps=11 format=3 uid="uid://bghlv24k1sx8m"]
 
 [ext_resource type="Script" uid="uid://n05yngf1es1x" path="res://Player/Player.gd" id="1_bcc58"]
 [ext_resource type="Texture2D" uid="uid://b7dmnvwer7ncj" path="res://Player/Unika.png" id="2_vvw5e"]
+[ext_resource type="Script" uid="uid://cvmdn2octl06m" path="res://StateMachine/StateMachine (1).gd" id="3_6eg3q"]
+[ext_resource type="Script" uid="uid://bkvapyhp540bq" path="res://Player/idle.gd" id="4_amv1d"]
+[ext_resource type="Script" uid="uid://70g2aro3xaqi" path="res://Player/jump.gd" id="4_fmfli"]
+[ext_resource type="Script" uid="uid://dt5toa51x0l0t" path="res://Player/double_jump.gd" id="5_amv1d"]
+[ext_resource type="Script" uid="uid://d1ojgfcqke86u" path="res://Player/wall_climb.gd" id="6_787ea"]
+[ext_resource type="Script" uid="uid://ctwgiinmlm8s" path="res://Player/dash.gd" id="7_c7av4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vvw5e"]
 radius = 24.0
-height = 128.0
+height = 96.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vvw5e"]
 
@@ -22,6 +28,37 @@ texture = ExtResource("2_vvw5e")
 shape = SubResource("CapsuleShape2D_vvw5e")
 
 [node name="BulletSpawn" type="CollisionShape2D" parent="."]
-position = Vector2(128, 0)
+position = Vector2(64, 0)
 shape = SubResource("CircleShape2D_vvw5e")
 disabled = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("currentState")]
+script = ExtResource("3_6eg3q")
+currentState = NodePath("idle")
+startOnReady = true
+metadata/_custom_type_script = "uid://cvmdn2octl06m"
+
+[node name="idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("4_amv1d")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://cxtelhsf7er2"
+
+[node name="Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("4_fmfli")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://cxtelhsf7er2"
+
+[node name="Double Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("5_amv1d")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://cxtelhsf7er2"
+
+[node name="WallClimb" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("6_787ea")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://cxtelhsf7er2"
+
+[node name="Dash" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("7_c7av4")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://cxtelhsf7er2"

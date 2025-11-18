@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://thcycnt27q4a"]
+
+[node name="BioCloneTrooper" type="CharacterBody2D"]

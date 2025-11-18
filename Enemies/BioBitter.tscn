@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://4fxap3h47lxi"]
+
+[ext_resource type="Texture2D" uid="uid://bet567405gfkn" path="res://Enemies/EnemyAssets/BioBitter.png" id="1_qef28"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qef28"]
+
+[node name="BioBitter" type="CharacterBody2D"]
+
+[node name="BioBitter" type="Sprite2D" parent="." groups=["Enemy"]]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_qef28")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qef28")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
