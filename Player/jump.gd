@@ -9,13 +9,13 @@ func exit() -> void:
 	pass
 	
 func update(_delta: float) -> void:
-	if Input.is_action_just_pressed("jump") and player.CanDoubleJump(true):
+	if Input.is_action_just_pressed("jump") and player.CanDoubleJump:
 		transitioned.emit("Double Jump")
 	
-	#if player.CanWallClimb(true) and player.onWall(true):
+	#if player.CanWallClimb and player.onWall:
 		#transitioned.emit("WallClimb")
 	
-	if Input.is_action_just_pressed("Dash") and player.CanDash(true):
+	if Input.is_action_just_pressed("Dash") and player.CanDash:
 		transitioned.emit("Dash")
 	
 	if player.is_on_floor():
