@@ -6,13 +6,11 @@ func enter() -> void:
 	
 	
 func exit() -> void:
-	player.SPEED = 300
+	pass
 	
-func update(delta: float) -> void:
-	if player._on_DashTimer_timeout():
+func update(_delta: float) -> void:
+	if player._on_dash_timer_timeout():
 		transitioned.emit("idle")
 
-func physics_update(delta: float) -> void:
+func physics_update(_delta: float) -> void:
 	pass
-#func _on_DashTimer_timeout() -> void:
-	#player.SPEED = 300

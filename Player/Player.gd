@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 func Dash():
 	$DashTimer.start()
-	SPEED *=10
+	SPEED *=100
 	velocity.x = direction * SPEED
 
 func shoot():
@@ -51,5 +51,9 @@ func shoot():
 	instance.Zdex = z_index -1
 	main.add_child.call_deferred(instance)
 	
-func _on_DashTimer_timeout() -> void:
+
+	
+
+
+func _on_dash_timer_timeout() -> void:
 	SPEED = 300
