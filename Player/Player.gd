@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name player
+
 @onready var main = get_tree().get_root().get_node(".")
 @onready var projectile = load("res://Player/projectile.tscn")
 @export var SPEED = 300.0
