@@ -1,17 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://4fxap3h47lxi"]
+[gd_scene load_steps=4 format=3 uid="uid://4fxap3h47lxi"]
 
+[ext_resource type="Script" uid="uid://deeb1eicgvqw1" path="res://Enemies/bio_bitter.gd" id="1_4ytku"]
 [ext_resource type="Texture2D" uid="uid://bet567405gfkn" path="res://Enemies/EnemyAssets/BioBitter.png" id="1_qef28"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qef28"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ytku"]
+size = Vector2(16.514359, 13.239878)
 
 [node name="BioBitter" type="CharacterBody2D"]
+script = ExtResource("1_4ytku")
 
 [node name="BioBitter" type="Sprite2D" parent="." groups=["Enemy"]]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_qef28")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_qef28")
-disabled = true
+position = Vector2(32.5, 28.000008)
+scale = Vector2(15.320002, 12.84)
+shape = SubResource("RectangleShape2D_4ytku")
 
 [node name="Area2D" type="Area2D" parent="."]
+
+[node name="DirectionTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
