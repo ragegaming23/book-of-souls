@@ -21716,7 +21716,7 @@ position = Vector2(-3008, -176)
 
 [node name="BookPortal" parent="." instance=ExtResource("3_pa3xu")]
 z_index = -1
-position = Vector2(1512, -76)
+position = Vector2(1456, -88)
 next_scene = ExtResource("4_4jdcb")
 
 [node name="Floor" parent="." instance=ExtResource("2_b5fwq")]

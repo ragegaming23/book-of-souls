@@ -12,6 +12,7 @@ var flipped = true
 @export var onWall = false
 @export var CanDash = false
 
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -49,7 +50,3 @@ func shoot():
 	main.add_child.call_deferred(instance)
 	
 	
-
-
-func _on_dash_timer_timeout() -> void:
-	SPEED = 300

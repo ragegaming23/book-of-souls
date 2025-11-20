@@ -3,7 +3,7 @@ extends State
 @export var JUMP_VELOCITY = -600.0
 
 func enter() -> void:
-	player.velocity.y = JUMP_VELOCITY
+	Player.velocity.y = JUMP_VELOCITY
 	
 func exit() -> void:
 	pass
@@ -11,6 +11,8 @@ func exit() -> void:
 func update(_delta: float) -> void:
 	if Player.is_on_floor():
 		transitioned.emit("idle")
-
+	
+	if Input.is_action_just_pressed("Dash") and Player.CanDash:
+		transitioned.emit("Dash")
 func physics_update(_delta: float) -> void:
 	pass
