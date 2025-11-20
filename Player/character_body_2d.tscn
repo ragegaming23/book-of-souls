@@ -40,29 +40,29 @@ currentState = NodePath("idle")
 startOnReady = true
 metadata/_custom_type_script = "uid://cvmdn2octl06m"
 
-[node name="idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+[node name="idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("Player")]
 script = ExtResource("4_amv1d")
-player = NodePath("../..")
+Player = NodePath("../..")
 metadata/_custom_type_script = "uid://cxtelhsf7er2"
 
-[node name="Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+[node name="Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("Player")]
 script = ExtResource("4_fmfli")
-player = NodePath("../..")
+Player = NodePath("../..")
 metadata/_custom_type_script = "uid://cxtelhsf7er2"
 
-[node name="Double Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+[node name="Double Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("Player")]
 script = ExtResource("5_amv1d")
-player = NodePath("../..")
+Player = NodePath("../..")
 metadata/_custom_type_script = "uid://cxtelhsf7er2"
 
-[node name="WallClimb" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+[node name="WallClimb" type="Node" parent="StateMachine" node_paths=PackedStringArray("Player")]
 script = ExtResource("6_787ea")
-player = NodePath("../..")
+Player = NodePath("../..")
 metadata/_custom_type_script = "uid://cxtelhsf7er2"
 
-[node name="Dash" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+[node name="Dash" type="Node" parent="StateMachine" node_paths=PackedStringArray("Player")]
 script = ExtResource("7_c7av4")
-player = NodePath("../..")
+Player = NodePath("../..")
 metadata/_custom_type_script = "uid://cxtelhsf7er2"
 
 [node name="DashTimer" type="Timer" parent="."]

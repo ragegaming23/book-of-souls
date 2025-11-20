@@ -11,7 +11,6 @@ var flipped = true
 @export var CanWallClimb = false
 @export var onWall = false
 @export var CanDash = false
-var direction := Input.get_axis("move_left", "move_right")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -40,10 +39,6 @@ func _physics_process(delta: float) -> void:
 		flipped = true
 	
 	move_and_slide()
-func Dash():
-	$DashTimer.start()
-	SPEED *=100
-	velocity.x = direction * SPEED
 
 func shoot():
 	var instance = projectile.instantiate()
@@ -53,7 +48,6 @@ func shoot():
 	instance.Zdex = z_index -1
 	main.add_child.call_deferred(instance)
 	
-
 	
 
 
