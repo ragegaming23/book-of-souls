@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://bn42p26fvpfr6"]
+[gd_scene load_steps=8 format=4 uid="uid://bn42p26fvpfr6"]
 
 [ext_resource type="PackedScene" uid="uid://bghlv24k1sx8m" path="res://Player/character_body_2d.tscn" id="1_qoeth"]
 [ext_resource type="Texture2D" uid="uid://j0aeo24toag6" path="res://icon.svg" id="2_82gsn"]
 [ext_resource type="PackedScene" uid="uid://h6gbl1r4gie" path="res://levels/Library_Level Hub/book_portal.tscn" id="3_tys2w"]
 [ext_resource type="PackedScene" uid="uid://fl4y7ucoex8h" path="res://levels/Level 4_Mideaval world/level 4.tscn" id="4_f3ysx"]
+[ext_resource type="PackedScene" uid="uid://bhmx1utboh6nh" path="res://Player/Pickups/double_jump_upgrade.tscn" id="5_82gsn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qoeth"]
 texture = ExtResource("2_82gsn")
@@ -120,3 +121,6 @@ tile_set = SubResource("TileSet_82gsn")
 z_index = -1
 position = Vector2(-1096, -848)
 next_scene = ExtResource("4_f3ysx")
+
+[node name="Double_Jump_upgrade" parent="." instance=ExtResource("5_82gsn")]
+position = Vector2(2200, 992)

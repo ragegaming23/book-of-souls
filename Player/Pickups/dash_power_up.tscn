@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cns8wdc8y355"]
+
+[ext_resource type="Script" uid="uid://bxq3ouuaogami" path="res://area_2d.gd" id="1_vtmgm"]
+[ext_resource type="Texture2D" uid="uid://j0aeo24toag6" path="res://icon.svg" id="2_kjj2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31ls6"]
+size = Vector2(57, 57)
+
+[node name="Dash power up" type="Area2D"]
+script = ExtResource("1_vtmgm")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.31540853, 0.53051853, 0.133111, 1)
+position = Vector2(-16, 0)
+scale = Vector2(0.0625, 0.5)
+texture = ExtResource("2_kjj2t")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+modulate = Color(0.0615454, 0.52473426, 2.8878452e-07, 1)
+position = Vector2(8, 0)
+scale = Vector2(0.0625, 0.5)
+texture = ExtResource("2_kjj2t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_31ls6")
+
+[node name="Animation" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Animation" to="." method="_on_animation_timeout"]

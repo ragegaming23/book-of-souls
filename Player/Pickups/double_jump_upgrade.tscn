@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhmx1utboh6nh"]
+
+[ext_resource type="Script" uid="uid://d4bkb57g41vs7" path="res://Player/Pickups/double_jump_upgrade.gd" id="1_4cewr"]
+[ext_resource type="Texture2D" uid="uid://j0aeo24toag6" path="res://icon.svg" id="1_86jgn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cewr"]
+size = Vector2(57, 57)
+
+[node name="Double_Jump_upgrade" type="Area2D"]
+script = ExtResource("1_4cewr")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.64459217, 0.39601108, 0.089485265, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_86jgn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4cewr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

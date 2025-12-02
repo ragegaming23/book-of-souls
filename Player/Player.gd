@@ -11,7 +11,7 @@ var flipped = true
 @export var CanWallClimb = false
 @export var onWall = false
 @export var CanDash = false
-
+@export var gravity := 1200.0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -50,3 +50,13 @@ func shoot():
 	main.add_child.call_deferred(instance)
 	
 	
+func get_wall_normal_only() -> Vector2:
+	for i in range(get_slide_collision_count()):
+		var collision := get_slide_collision(i)
+		var n := collision.get_normal()
+
+		# TRUE wall = horizontal surface
+		if abs(n.x) > 0.1 and abs(n.y) < 0.1:
+			return n
+
+	return Vector2.ZERO
