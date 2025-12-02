@@ -11,7 +11,10 @@ var flipped = true
 @export var CanWallClimb = false
 @export var onWall = false
 @export var CanDash = false
+<<<<<<< HEAD
 @export var gravity := 1200.0
+=======
+>>>>>>> 168b00f8b2cd1fb01f423a10aaaeeddf620755cb
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

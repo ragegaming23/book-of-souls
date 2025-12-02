@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 class_name BioBitter
-const speed = 10
+const speed = 100
 
 var is_BioBitter_chase: bool
 
@@ -19,10 +19,14 @@ const gravity = 900
 var knockback_force = 200
 var is_roaming: bool = true
 
+var player: CharacterBody2D
+var player_in_area = false
+
 func _process(delta):
 	if !is_on_floor():
 		velocity.y += gravity * delta
 		velocity.x = 0
+	
 	move(delta)
 	move_and_slide()
 	
@@ -30,9 +34,15 @@ func move(delta):
 	if !dead:
 		if !is_BioBitter_chase:
 			velocity += dir * speed * delta
+		elif is_BioBitter_chase and !taking_damage:
+			var dir_to_player = position.direction_to(player.position) * speed
+			velocity.x = dir_to_player.x
 		is_roaming = true
 	elif dead:
 		velocity.x = 0
+
+func handle_death():
+	self.queue_free()
 
 func _on_direction_timer_timeout() -> void:
 	$DirectionTimer.wait_time = choose([1.5,2.0,2.5])
