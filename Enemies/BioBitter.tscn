@@ -21,7 +21,7 @@ position = Vector2(32.5, 28.000008)
 scale = Vector2(15.320002, 12.84)
 shape = SubResource("RectangleShape2D_4ytku")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 
 [node name="DirectionTimer" type="Timer" parent="."]
 autostart = true

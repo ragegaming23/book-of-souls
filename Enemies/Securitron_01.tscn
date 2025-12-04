@@ -1,61 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccil8qxr164a7"]
+[gd_scene load_steps=4 format=3 uid="uid://ccil8qxr164a7"]
 
+[ext_resource type="Script" uid="uid://dse5383di6jrv" path="res://Enemies/securitron_01.gd" id="1_0nfwc"]
 [ext_resource type="Texture2D" uid="uid://nn3bcy4pgjby" path="res://Enemies/EnemyAssets/securitron.png" id="1_71h07"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71h07"]
-radius = 13.0
-height = 46.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0nfwc"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1l23"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qfeo7"]
-radius = 17.029387
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_71h07"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71h07"]
+size = Vector2(20, 18.403362)
 
 [node name="Securitron01" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_0nfwc")
 
 [node name="Securitron" type="Sprite2D" parent="."]
+position = Vector2(2.3841858e-07, 0)
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("1_71h07")
 
-[node name="Body" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 30)
-shape = SubResource("CapsuleShape2D_71h07")
-
-[node name="RightArm" type="CollisionShape2D" parent="."]
-position = Vector2(17, 20)
-shape = SubResource("CapsuleShape2D_0nfwc")
-
-[node name="LeftArm" type="CollisionShape2D" parent="."]
-position = Vector2(-37, 20)
-shape = SubResource("CapsuleShape2D_s1l23")
-
-[node name="Head" type="CollisionShape2D" parent="."]
-position = Vector2(-6, -18)
-shape = SubResource("CircleShape2D_qfeo7")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6, 0)
-shape = SubResource("CircleShape2D_71h07")
-disabled = true
+position = Vector2(-10, 10)
+scale = Vector2(3.3999987, 4.7599998)
+shape = SubResource("RectangleShape2D_71h07")
 
-[node name="BodyCollision" type="Area2D" parent="." groups=["Enemy"]]
+[node name="DirectionTimer" type="Timer" parent="."]
+autostart = true
 
-[node name="Body" type="CollisionShape2D" parent="BodyCollision"]
-position = Vector2(-8, 30)
-shape = SubResource("CapsuleShape2D_71h07")
-
-[node name="RightArm" type="CollisionShape2D" parent="BodyCollision"]
-position = Vector2(17, 20)
-shape = SubResource("CapsuleShape2D_0nfwc")
-
-[node name="LeftArm" type="CollisionShape2D" parent="BodyCollision"]
-position = Vector2(-37, 20)
-shape = SubResource("CapsuleShape2D_s1l23")
-
-[node name="Head" type="CollisionShape2D" parent="BodyCollision"]
-position = Vector2(-6, -18)
-shape = SubResource("CircleShape2D_qfeo7")
+[connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]

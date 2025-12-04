@@ -21,7 +21,7 @@ position = Vector2(2.500002, 9.950035)
 scale = Vector2(6.780117, -7.509993)
 shape = SubResource("RectangleShape2D_clkf4")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 scale = Vector2(0.05, 0.05)
 
 [node name="DirectionTimer" type="Timer" parent="."]
