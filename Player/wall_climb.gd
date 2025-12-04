@@ -1,21 +1,21 @@
 extends State
 @export var Player : CharacterBody2D
 
-#@export var jump_force := Vector2(250, -450)
+@export var jump_force := Vector2(250, -450)
 
-#func enter() -> void:
-#	var p = Player
+func enter() -> void:
+	var p = Player
 
-#	var normal: Vector2 = p.get_wall_normal_only()
-#	if normal == Vector2.ZERO:
-#		return   # not on a wall
+	var normal: Vector2 = p.get_wall_normal_only()
+	if normal == Vector2.ZERO:
+		return   # not on a wall
 
-#	var dir := 1
-#	if normal.x < 0:
-#		dir = -1
+	var dir := 1
+	if normal.x < 0:
+		dir = -1
 
-#	p.velocity.x = dir * jump_force.x
-#	p.velocity.y = jump_force.y
+	p.velocity.x = dir * jump_force.x
+	p.velocity.y = jump_force.y
 
 
 func exit() -> void:
@@ -23,7 +23,8 @@ func exit() -> void:
 
 
 func update(_delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("jump"):
+		transitioned.emit("Jump")
 
 
 func physics_update(_delta: float) -> void:
