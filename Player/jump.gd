@@ -12,7 +12,7 @@ func update(_delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and Player.CanDoubleJump:
 		transitioned.emit("Double Jump")
 	
-	if Player.CanWallClimb:
+	if Player.CanWallClimb and Player.get_wall_normal_only:
 		transitioned.emit("WallClimb")
 	
 	if Input.is_action_just_pressed("Dash") and Player.CanDash:

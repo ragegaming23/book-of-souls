@@ -113,6 +113,7 @@ sources/2 = SubResource("TileSetAtlasSource_p4t6w")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_2tyn1")]
 position = Vector2(96, -848)
+CanDash = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-1, -1)
