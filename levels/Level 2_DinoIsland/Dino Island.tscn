@@ -105,7 +105,8 @@ texture = ExtResource("2_vr6yr")
 7:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_seeiv"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 7
 sources/2 = SubResource("TileSetAtlasSource_p4t6w")
 
 [node name="DinoIsland" type="Node2D"]
