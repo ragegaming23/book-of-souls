@@ -21706,7 +21706,8 @@ texture = ExtResource("5_4jdcb")
 155:155/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_pa3xu"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_4jdcb")
 
 [node name="Game Hub" type="Node2D"]
@@ -21735,11 +21736,11 @@ position = Vector2(1016, 0)
 position = Vector2(1352, 0)
 
 [node name="wall" parent="." instance=ExtResource("2_b5fwq")]
-position = Vector2(-192, 144)
+position = Vector2(-192, 187)
 rotation = 1.5707964
 
 [node name="wall2" parent="." instance=ExtResource("2_b5fwq")]
-position = Vector2(-232, 144)
+position = Vector2(-233, 185)
 rotation = 1.5707964
 
 [node name="wall3" parent="." instance=ExtResource("2_b5fwq")]
@@ -21751,8 +21752,8 @@ position = Vector2(1536, -488)
 rotation = 1.5707964
 
 [node name="wall5" parent="." instance=ExtResource("2_b5fwq")]
-position = Vector2(-272, 144)
-rotation = 1.5707964
+position = Vector2(-271, 0)
+rotation = -6.2831855
 
 [node name="wall6" parent="." instance=ExtResource("2_b5fwq")]
 position = Vector2(1536, -824)
@@ -21858,7 +21859,7 @@ tile_map_data = PackedByteArray("AAA0////AAAAAJoAAAAz////AAAAAJoAAAAy////AAAAAJo
 tile_set = SubResource("TileSet_pa3xu")
 
 [node name="BioBitter" parent="." instance=ExtResource("6_7fx8s")]
-position = Vector2(-2583, -317)
+position = Vector2(-334.00003, -71)
 
 [node name="Securitron01" parent="." instance=ExtResource("7_qicd0")]
 position = Vector2(-3192, -144)
@@ -21867,7 +21868,7 @@ position = Vector2(-3192, -144)
 position = Vector2(-3016, -416)
 
 [node name="BioLeeper" parent="." instance=ExtResource("9_iawo3")]
-position = Vector2(-2888, -216)
+position = Vector2(-58, -123)
 
 [node name="BioBug" parent="." instance=ExtResource("10_m8cdr")]
 position = Vector2(-2352, -400)

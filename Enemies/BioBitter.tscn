@@ -8,6 +8,8 @@ size = Vector2(16.514359, 13.239878)
 
 [node name="BioBitter" type="CharacterBody2D"]
 scale = Vector2(0.44000137, 0.32000017)
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_4ytku")
 
 [node name="BioBitter" type="Sprite2D" parent="." groups=["Enemy"]]

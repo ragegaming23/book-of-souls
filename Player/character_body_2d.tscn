@@ -16,8 +16,8 @@ height = 96.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_vvw5e"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
+collision_mask = 2
 script = ExtResource("1_bcc58")
-CanWallClimb = true
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.07321428, 0.081951775)
