@@ -27,5 +27,14 @@ shape = SubResource("RectangleShape2D_31ls6")
 [node name="Animation" type="Timer" parent="."]
 autostart = true
 
+[node name="unlocked text" type="Label" parent="."]
+visible = false
+offset_left = -112.0
+offset_top = -136.0
+offset_right = 109.0
+offset_bottom = -87.0
+text = "you've unlocked dash
+press shift or square to dash"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Animation" to="." method="_on_animation_timeout"]

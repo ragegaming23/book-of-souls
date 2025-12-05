@@ -17,4 +17,13 @@ texture = ExtResource("1_86jgn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4cewr")
 
+[node name="unlocked text" type="Label" parent="."]
+visible = false
+offset_left = -112.0
+offset_top = -136.0
+offset_right = 109.0
+offset_bottom = -87.0
+text = "you've unlocked Double Jump
+press space or X after jumping to Double Jump"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -11,6 +11,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		body.CanDash = true
 		queue_free()
+		$"unlocked text".set_visible(true)
 
 
 func _on_animation_timeout() -> void:
