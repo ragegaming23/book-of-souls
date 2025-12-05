@@ -11,21 +11,11 @@ script = ExtResource("1_vtmgm")
 
 [node name="Icon" type="Sprite2D" parent="."]
 modulate = Color(0.31540853, 0.53051853, 0.133111, 1)
-position = Vector2(-16, 0)
-scale = Vector2(0.0625, 0.5)
-texture = ExtResource("2_kjj2t")
-
-[node name="Icon2" type="Sprite2D" parent="."]
-modulate = Color(0.0615454, 0.52473426, 2.8878452e-07, 1)
-position = Vector2(8, 0)
-scale = Vector2(0.0625, 0.5)
+scale = Vector2(0.2734375, 0.28125)
 texture = ExtResource("2_kjj2t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_31ls6")
-
-[node name="Animation" type="Timer" parent="."]
-autostart = true
 
 [node name="unlocked text" type="Label" parent="."]
 visible = false
@@ -37,4 +27,3 @@ text = "you've unlocked dash
 press shift or square to dash"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="Animation" to="." method="_on_animation_timeout"]
