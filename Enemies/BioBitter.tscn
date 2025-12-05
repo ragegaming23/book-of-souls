@@ -23,7 +23,13 @@ shape = SubResource("RectangleShape2D_4ytku")
 
 [node name="Hitbox" type="Area2D" parent="."]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(32.5, 28.000008)
+scale = Vector2(15.320002, 12.84)
+shape = SubResource("RectangleShape2D_4ytku")
+
 [node name="DirectionTimer" type="Timer" parent="."]
 autostart = true
 
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]

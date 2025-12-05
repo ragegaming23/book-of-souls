@@ -52,3 +52,6 @@ func _on_direction_timer_timeout() -> void:
 func choose(array):
 	array.shuffle()
 	return array.front()
+
+func Take_Damage(dmg: int):
+	health = max(health - dmg, 0)

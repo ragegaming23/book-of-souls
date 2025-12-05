@@ -21875,3 +21875,61 @@ position = Vector2(-2352, -400)
 
 [node name="Biolilla" parent="." instance=ExtResource("11_sel4x")]
 position = Vector2(-2776, -208)
+
+[node name="movement intro" type="Label" parent="."]
+offset_left = -3080.0
+offset_top = -338.0
+offset_right = -2905.0
+offset_bottom = -237.0
+text = "use W to jump, 
+use A to move left, 
+use D to move right,
+and Left click to shoot "
+
+[node name="Securitron01" type="Label" parent="movement intro"]
+layout_mode = 0
+offset_left = -160.0
+offset_top = 138.0
+offset_right = -61.0
+offset_bottom = 161.0
+text = "Securitron01"
+
+[node name="Biolilla" type="Label" parent="movement intro"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = -10.0
+offset_right = 280.0
+offset_bottom = 13.0
+text = "Biolilla"
+
+[node name="Ramses" type="Label" parent="movement intro"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = -182.0
+offset_right = 91.0
+offset_bottom = -159.0
+text = "Ramses"
+
+[node name="BioBug" type="Label" parent="movement intro"]
+layout_mode = 0
+offset_left = 672.0
+offset_top = -142.0
+offset_right = 727.0
+offset_bottom = -119.0
+text = "BioBug"
+
+[node name="BioBitter" type="Label" parent="movement intro"]
+layout_mode = 0
+offset_left = 2728.0
+offset_top = 215.0
+offset_right = 2797.0
+offset_bottom = 238.0
+text = "BioBitter"
+
+[node name="BioLeeper" type="Label" parent="movement intro"]
+layout_mode = 0
+offset_left = 2992.0
+offset_top = 122.0
+offset_right = 3071.0
+offset_bottom = 145.0
+text = "BioLeeper"
