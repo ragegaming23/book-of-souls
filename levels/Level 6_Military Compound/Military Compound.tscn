@@ -104,7 +104,8 @@ texture = ExtResource("2_sx7rn")
 7:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_2laa1"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 7
 sources/2 = SubResource("TileSetAtlasSource_i11wi")
 
 [sub_resource type="PackedScene" id="PackedScene_0kwff"]
@@ -113,6 +114,9 @@ sources/2 = SubResource("TileSetAtlasSource_i11wi")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_qbjlo")]
 position = Vector2(1432, -44)
+CanDoubleJump = true
+CanWallClimb = true
+CanDash = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, 4)
@@ -122,5 +126,5 @@ collision_visibility_mode = 1
 
 [node name="BookPortal" parent="." instance=ExtResource("3_ms2vt")]
 z_index = -1
-position = Vector2(112, -836)
+position = Vector2(5888, -2200)
 next_scene = SubResource("PackedScene_0kwff")

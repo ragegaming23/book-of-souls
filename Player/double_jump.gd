@@ -11,7 +11,8 @@ func exit() -> void:
 func update(_delta: float) -> void:
 	if Player.is_on_floor():
 		transitioned.emit("idle")
-	
+	if Player.CanWallClimb and Player.is_on_wall():
+		transitioned.emit("WallClimb")
 	if Input.is_action_just_pressed("Dash") and Player.CanDash:
 		transitioned.emit("Dash")
 func physics_update(_delta: float) -> void:
