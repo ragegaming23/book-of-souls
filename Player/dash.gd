@@ -26,3 +26,5 @@ func update(delta: float) -> void:
 	dash_timer -= delta
 	if dash_timer <= 0.0:
 		transitioned.emit("idle")
+	if Player.CanWallClimb and Player.is_on_wall():
+		transitioned.emit("WallClimb")
