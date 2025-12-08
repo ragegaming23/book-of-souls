@@ -32,12 +32,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	if Input.is_action_pressed("move_left") and flipped:
+	if Input.is_action_pressed("move_left") and Input.is_action_just_released("move_right"):
 		scale.x = -1 
-		flipped = false
-	if Input.is_action_pressed("move_right") and not flipped:
+		
+	if Input.is_action_pressed("move_right") and Input.is_action_just_released("move_left"):
 		scale.x = -1
-		flipped = true
+		
 	
 	move_and_slide()
 func shoot():
