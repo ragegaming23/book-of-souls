@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ytku"]
 size = Vector2(16.514359, 13.239878)
 
-[node name="BioBitter" type="CharacterBody2D"]
+[node name="BioBitter" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(0.44000137, 0.32000017)
 collision_layer = 4
 collision_mask = 2
@@ -27,6 +27,7 @@ shape = SubResource("RectangleShape2D_4ytku")
 position = Vector2(32.5, 28.000008)
 scale = Vector2(15.320002, 12.84)
 shape = SubResource("RectangleShape2D_4ytku")
+disabled = true
 
 [node name="DirectionTimer" type="Timer" parent="."]
 autostart = true

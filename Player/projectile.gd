@@ -18,7 +18,8 @@ func _physics_process(_delta: float):
 
 func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy") or is_in_group("Boss"):
-		body.Take_Damage(1)
+		body.Take_Damage(1) 
+		body.taking_damage = true
 		queue_free()
 	else:
 		print("HIT!!")

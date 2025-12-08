@@ -19,7 +19,7 @@ const gravity = 900
 var knockback_force = 200
 var is_roaming: bool = true
 
-var player: CharacterBody2D
+var player1 = "res://Player/character_body_2d.tscn"
 var player_in_area = false
 
 func _process(delta):
@@ -28,13 +28,14 @@ func _process(delta):
 		velocity.x = 0
 	move(delta)
 	move_and_slide()
-	
+	if health <= 0:
+		death()
 func move(delta):
 	if !dead:
 		if !is_BioBitter_chase:
 			velocity += dir * speed * delta
 		elif is_BioBitter_chase and !taking_damage:
-			var dir_to_player = position.direction_to(player.position) * speed
+			var dir_to_player = position.direction_to(player1.position) * speed
 			velocity.x = dir_to_player.x
 		is_roaming = true
 	elif dead:
@@ -57,9 +58,7 @@ func Take_Damage(dmg: int):
 	health = max(health - dmg, 0)
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	Take_Damage(1)
+	body.Take_Damage(1)
 
 func death():
-	if health == 0:
-		dead = true
-		queue_free()
+	queue_free()
