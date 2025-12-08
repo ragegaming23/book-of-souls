@@ -57,4 +57,9 @@ func Take_Damage(dmg: int):
 	health = max(health - dmg, 0)
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	Take_Damage(1)
+
+func death():
+	if health == 0:
+		dead = true
+		queue_free()

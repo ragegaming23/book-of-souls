@@ -24,7 +24,7 @@ func exit() -> void:
 func update(delta: float) -> void:
 	# Countdown dash timer
 	dash_timer -= delta
-	if dash_timer <= 0.0:
+	if dash_timer <= 0.0 and Player.is_on_floor():
 		transitioned.emit("idle")
 	if Player.CanWallClimb and Player.is_on_wall():
 		transitioned.emit("WallClimb")
