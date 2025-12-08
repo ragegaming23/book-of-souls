@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=4 uid="uid://bnuc240r7s8sk"]
+[gd_scene load_steps=16 format=4 uid="uid://bnuc240r7s8sk"]
 
+[ext_resource type="Script" uid="uid://cbj3gj2017exg" path="res://levels/Library_Level Hub/level_1_tutorial.gd" id="1_iawo3"]
 [ext_resource type="PackedScene" uid="uid://bghlv24k1sx8m" path="res://Player/character_body_2d.tscn" id="1_piyb2"]
 [ext_resource type="PackedScene" uid="uid://r857h8bf53qw" path="res://levels/Library_Level Hub/Floor.tscn" id="2_b5fwq"]
 [ext_resource type="PackedScene" uid="uid://h6gbl1r4gie" path="res://levels/Library_Level Hub/book_portal.tscn" id="3_pa3xu"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://djo58c7liqg4j" path="res://Enemies/BioLeeper.tscn" id="9_iawo3"]
 [ext_resource type="PackedScene" uid="uid://70012bw27eux" path="res://Enemies/BioBug.tscn" id="10_m8cdr"]
 [ext_resource type="PackedScene" uid="uid://3gurbgpp4m17" path="res://Enemies/Biolilla.tscn" id="11_sel4x"]
+[ext_resource type="PackedScene" uid="uid://ctq4ak63k361o" path="res://levels/fade_transition.tscn" id="13_m8cdr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jdcb"]
 texture = ExtResource("5_4jdcb")
@@ -21711,6 +21713,7 @@ physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_4jdcb")
 
 [node name="Game Hub" type="Node2D"]
+script = ExtResource("1_iawo3")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_piyb2")]
 position = Vector2(-3009, -183)
@@ -21933,3 +21936,14 @@ offset_top = 122.0
 offset_right = 3071.0
 offset_bottom = 145.0
 text = "BioLeeper"
+
+[node name="FadeTransition" parent="." instance=ExtResource("13_m8cdr")]
+visible = false
+offset_left = -3582.0
+offset_top = -584.0
+offset_right = -2431.0
+offset_bottom = 85.0
+
+[node name="TimerLvl1" type="Timer" parent="FadeTransition"]
+
+[connection signal="timeout" from="FadeTransition/TimerLvl1" to="." method="_on_timer_lvl_1_timeout"]

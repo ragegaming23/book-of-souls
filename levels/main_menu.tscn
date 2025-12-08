@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://w0fv6fq6g755"]
+
+[ext_resource type="Script" uid="uid://dka8avs2l1rbj" path="res://main_menu.gd" id="1_0ettg"]
+[ext_resource type="PackedScene" uid="uid://ctq4ak63k361o" path="res://levels/fade_transition.tscn" id="2_duh7t"]
+[ext_resource type="Texture2D" uid="uid://cre08w5ctdn3c" path="res://levels/BioSyn_Logo.png" id="3_6ymyu"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_0ettg")
+
+[node name="ButtonManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -19.0
+offset_right = 40.0
+offset_bottom = 21.0
+
+[node name="Start" type="Button" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 420.0
+offset_right = 676.0
+offset_bottom = 520.0
+text = "Start"
+
+[node name="Quit" type="Button" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 540.0
+offset_right = 676.0
+offset_bottom = 640.0
+text = "Quit"
+
+[node name="FadeTransition" parent="." instance=ExtResource("2_duh7t")]
+visible = false
+
+[node name="Fade_timer" type="Timer" parent="FadeTransition"]
+
+[node name="BioSynLogo" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(576, 324)
+scale = Vector2(0.9039063, 0.8958333)
+texture = ExtResource("3_6ymyu")
+
+[connection signal="pressed" from="ButtonManager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="ButtonManager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="FadeTransition/Fade_timer" to="." method="_on_fade_timer_timeout"]
