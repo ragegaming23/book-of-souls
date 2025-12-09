@@ -6,7 +6,7 @@ class_name player
 @onready var projectile = load("res://Player/projectile.tscn")
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -500.0
-var flipped = true
+var flipped = false
 @export var CanDoubleJump = false
 @export var CanWallClimb = false
 @export var onWall = false
@@ -32,12 +32,14 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	if Input.is_action_pressed("move_left") and Input.is_action_just_released("move_right"):
-		scale.x = -1 
-		
-	if Input.is_action_pressed("move_right") and Input.is_action_just_released("move_left"):
-		scale.x = -1
-		
+	if Input.is_action_pressed("move_left") and !flipped:
+		if !Input.is_action_pressed("move_right"):
+			scale.x = -1 
+			flipped = true
+	if Input.is_action_pressed("move_right") and flipped:
+		if !Input.is_action_pressed("move_left"):
+			scale.x = -1
+			flipped = false
 	
 	move_and_slide()
 func shoot():
